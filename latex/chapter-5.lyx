@@ -1,0 +1,1700 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass scrbook
+\begin_preamble
+% increase link area for cross-references and autoname them
+\AtBeginDocument{\renewcommand{\ref}[1]{\mbox{\autoref{#1}}}}
+\newlength{\abc}
+\settowidth{\abc}{\space}
+\AtBeginDocument{%
+\addto\extrasenglish{
+ \renewcommand{\equationautorefname}{\hspace{-\abc}}
+ \renewcommand{\sectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsubsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\figureautorefname}{Fig.\negthinspace}
+ \renewcommand{\tableautorefname}{Tab.\negthinspace}
+}
+}
+
+% in case somebody want to have the label "Gleichung"
+%\renewcommand{\eqref}[1]{Gleichung~(\negthinspace\autoref{#1})}
+
+% put the link to figure floats to the beginning
+% of the figure and not to its end
+\usepackage[figure]{hypcap}
+
+
+
+% the pages of the TOC is numbered roman
+% and a pdf-bookmark for the TOC is added
+\let\myTOC\tableofcontents
+\renewcommand\tableofcontents{%
+  \frontmatter
+  \pdfbookmark[1]{\contentsname}{}
+  \myTOC
+  \mainmatter }
+
+% make caption labels bold
+\setkomafont{captionlabel}{\bfseries}
+\setcapindent{1em}
+
+% enable calculations
+\usepackage{calc}
+
+% fancy page header/footer settings
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+% increase the bottom float placement fraction
+\renewcommand{\bottomfraction}{0.5}
+
+% avoid that floats are placed above its sections
+\let\mySection\section\renewcommand{\section}{\suppressfloats[t]\mySection}
+\end_preamble
+\options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage,fleqn
+\use_default_options true
+\master thesis.lyx
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman lmodern
+\font_sans lmss
+\font_typewriter lmtt
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_title "Your title"
+\pdf_author "Your name"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
+\papersize a4paper
+\use_geometry false
+\use_amsmath 2
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\branch NoChildDocument
+\selected 0
+\filename_suffix 0
+\color #ff0000
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Left Header
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+chaptername
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thechapter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+rightmark
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Enable page headers and add the chapter to the header line.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Footer
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Right Footer
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Solution Paradigms
+\end_layout
+
+\begin_layout Standard
+In order to alleviate the problems cited in the previous section, a lot
+ of novel architectures have been recommended that outperform the wired
+ network asymptotically.
+\end_layout
+
+\begin_layout Section
+RF Interconnects
+\end_layout
+
+\begin_layout Subsection
+Introduction
+\end_layout
+
+\begin_layout Standard
+RF interconnects use radio frequency (mm-wave) over waveguides for transmitting
+ data across a chip.
+ Whereas the wired transmission relies on transferring a voltage over a
+ set of transmission lines, RFIs employ EM waves sent over a media or wave
+ guide.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/RF.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/rf2.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Above two of the various possible implementations of RF-Interconnects.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The usual implementations of RFIs involve one (often several) wave guides
+ that behave like a bus that nodes can write onto and read from.
+ This, again raises issues of arbitration but these can be easily solved
+ using tokens or equivalent arbitration mechanisms.
+\end_layout
+
+\begin_layout Standard
+In RFIs, the transmission of data is achieved by modulating an electromagnetic
+ (EM) wave along a wave guide (a generalized wire) that serves as a transmission
+ line on-chip.
+ In the dielectric, travels at speeds nearing that in vacuum, thus the latency
+ is the smallest that is physically possible.
+ 
+\end_layout
+
+\begin_layout Subsection
+RFI components
+\end_layout
+
+\begin_layout Subsubsection
+Frequency generator
+\end_layout
+
+\begin_layout Standard
+The most basic requirement to have RF interconnects is having an RF ( mm-wave
+ range) generator.
+ In order to be dominant over the wired networks, this generation demands
+ efficiency in terms of silicon area and power consumption.
+ Phase-lock-loops (PLLs) have been used for the purpose for some time, but
+ the biggest inhibition in it becoming main stream is it's voracious apetite
+ for power.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4561402"
+
+\end_inset
+
+ tries to alleviate this problem by using sub-harmonic injection locking
+ for concurrent generation of multiple mm-wave frequency carriers on-chip
+ by locking them simultaneously to a single reference.
+ They demonstrate the idea on 30GHz and 50GHz voltage controlled oscillators
+ using a 10GHz source where each such oscillator consumes around 4mW of
+ power.
+\end_layout
+
+\begin_layout Subsubsection
+Transmission lines
+\end_layout
+
+\begin_layout Standard
+The second requirement for RF interconnects is having a transmission medium.
+ At mm-wave frequencies, super-scaled CMOS processes are one of the most
+ promising paradigms for fabricating on-chip transmission lines for guiding
+ EM waves .
+ These processes, again, can be implemented in a number of ways two of which
+ are using a metal dielectric stack and co-planar waveguide.
+ Setting dimensions present a fundamental tradeoff between performance metrics
+ like loss , latency crosstalk and variation of loss with frequency.
+ Higher loss limits the maximum distance to which a signal can be transmitted,
+ which in turn limits the frequencies we can use for certain communication
+ lines.
+ In particular, higher frequencies with higher loss cannot be used for very
+ large distance communication.
+ Narrowing of transmission lines leads to an increase in resistive loss,
+ although it ensures lower latency because of limited substrate in path.
+ On the other hand, widening them increases substrate loss, and increases
+ latency as the effective dielectric constant would be close to that of
+ silicon, which is 11.7 (compared to 4 of the dielectric).
+\end_layout
+
+\begin_layout Subsubsection
+Encoding Scheme
+\end_layout
+
+\begin_layout Standard
+The chips, unlike the RFIs, are all digital.
+ Thus we need to interface these digital and analog paradigms using and
+ ADC (analog to digital converter) and DAC (digital to analog).
+ Further we need an encoding scheme that encodes digital data into analog
+ format, such as the very simplistic OOK ( On-Off Keying ) scheme or the
+ more involved ASK (Amplitude Shift Keying), FSK (Frequency Shift Keying)
+ and PSK (Phase Shift Keying).
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:ADEncoding"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+OOK
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/ook.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "wrap:OOK"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+might want to paraphrase ook , fsk and psk definitions
+\end_layout
+
+\end_inset
+
+On-off keying modulation is the simplest modulation scheme among all types
+ of signal modulation.
+ In EM communications, on-off keying modulation is generally implemented
+ in the base-band.
+ The idea is to encode bits into presence of signal, for instance in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "wrap:OOK"
+
+\end_inset
+
+, presence of signal marks a bit 1 and absence marks a bit 0.
+ This is a specific case of a more general encoding called Amplitude Shift
+ Keying (ASK).
+\end_layout
+
+\begin_layout Paragraph
+FSK
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/fsk.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "wrap:FSK"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Frequency-shift keying (FSK) is a method of transmitting digital signals.
+ The two binary states, logic 0 (low) and 1 (high), are each represented
+ by an analog waveform.
+ Shown in
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "wrap:FSK"
+
+\end_inset
+
+ Logic 0 is represented by a wave at a specific (higher) frequency, and
+ logic 1 is represented by a wave at a different (lower) frequency.
+ 
+\end_layout
+
+\begin_layout Paragraph
+PSK
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/psk.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "wrap:PSK"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Phase-shift keying (PSK) is a method of digital communication in which the
+ phase of a transmitted signal is varied to convey information.
+ There are several methods that can be used to accomplish PSK.
+\end_layout
+
+\begin_layout Standard
+The simplest PSK technique is called binary phase-shift keying (BPSK), and
+ is depicted in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "wrap:PSK"
+
+\end_inset
+
+.
+ It uses two opposite signal phases (0 and 180 degrees).
+ The digital signal is broken up timewise into individual bits (binary digits).
+ The state of each bit is determined according to the state of the preceding
+ bit.
+ If the phase of the wave does not change, then the signal state stays the
+ same (0 or 1).
+ If the phase of the wave changes by 180 degrees -- that is, if the phase
+ reverses -- then the signal state changes (from 0 to 1, or from 1 to 0).
+\end_layout
+
+\begin_layout Subsection
+RFI performance
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/rf_bw_mix.png
+	width 11cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:RFmixer"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+RFI needs to justify the efforts by showing improvements in both performance
+ and scalability over the incumbent wired technology that is the repeated
+ wire, or its multi-bit extension.
+\end_layout
+
+\begin_layout Standard
+In case of wires, the resistance and capacitance (RC) product of these wires
+ introduces considerable delay in rise and fall of signals, which is intolerable
+ in a mm-length wire setup.
+ Since the data rate per wire is limited, in order to achieve high data
+ rate, a wide bus is required.
+ Scaling helps, allowing a higher density of wires, at the obvious cost
+ of linear increase in the number of repeaters.
+ Researchers in
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chang:2008:RIC:1353629.1353649"
+
+\end_inset
+
+ show that the improving efficiency of repeaters (again, owing to the down-scale
+) is more than compensated by the increase in number of repeaters to ensure
+ a decent bandwidth.
+ At a projected 1 million plus repeaters, the energy hungry design becomes
+ unwieldy.
+\end_layout
+
+\begin_layout Standard
+In contrast, RFI performace is expected to increase with scaling.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+paraphrase here
+\end_layout
+
+\end_inset
+
+When using traditional voltage signaling, the entire length of the wire
+ has to be charged and discharged to signify either ’1’ or ’0’, consuming
+ much time and energy.
+ In RF-I an electromagRFInetic carrier wave is continuously sent along the
+ transmission line instead.
+ Data is modulated onto that carrier wave using amplitude and/or phase changes.
+\end_layout
+
+\begin_layout Standard
+As discussed previously,
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+paraphrase here
+\end_layout
+
+\end_inset
+
+ it is possible to improve bandwidth efficiency of RF-I by sending many
+ simultaneous streams of data over a single transmission line.
+ This is referred to as multi-band (or multi-carrier) RF-I
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chang:2008:PRC:1521747.1521818"
+
+\end_inset
+
+.
+ In multi-band RF-I, there are N mixers on the transmitting (or Tx) side,
+ where N is the number of senders sharing the transmission line (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:RFmixer"
+
+\end_inset
+
+ uses N=6 ).
+ Each mixer up-converts individual data streams into a specific channel
+ (or frequency band).
+ On the receiver (Rx) side, N additional mixers are employed to down-convert
+ each signal back to the original data, and N low-pass-filters (LPF) are
+ used to isolate the data from residual high-frequency components.
+ This method comes from standard wireless networks paradigm - FDMA.
+ Leveraging the over 100 GHz in bandwidth available, we can modulate the
+ net frequency-bandwidth into several high frequency carriers giving us
+ unprecedented aggregate on-chip data-bandwidth
+\begin_inset CommandInset citation
+LatexCommand cite
+key "1494007"
+
+\end_inset
+
+.We can take a step further and introduce dynamic allocation of transmission
+ frequencies.
+ The distribution can be done on a plethora of grounds, including application
+ bandwidth requirements, priority etc.
+ This would ensure a high utilization of the huge raw aggregate data-bandwidth
+ along with introducing a hook whereby we can control and ensure the QoS
+ features of our chip.
+\end_layout
+
+\begin_layout Standard
+Also the data rate is enhanced because of a couple of reasons.
+ Firstly, the baseband data rate is limited by the high attenuation of high
+ frequencies compared with DC due to wire resistance.
+ At higher frequencies, required for higher data rates, we require equalization
+ hardware to make up for the variations in losses from DC to the maximum
+ frequency.
+ Upon , modulating our original wave onto a carrier frequency the resulting
+ wave experiences a relatively less change in attenuation even at high modulatio
+n rates (since the data bandwidth to carrier frequency ratio 
+\begin_inset Formula $\frac{\Delta f}{f_{c}}$
+\end_inset
+
+ is much small than at baseband).
+ This in turn simplifies the required equalization, saving power and area.
+ 
+\end_layout
+
+\begin_layout Standard
+RF-I can allow signal transmission across a 400 mm 2 die in 0.3 ns via propagatio
+n at the effective speed of light 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chang:2008:RIC:1353629.1353649"
+
+\end_inset
+
+ as apposed to less than or equal to 4 ns on a repeated bus.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+see application specific from CHANG:PRC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Photonic Interconnects
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/ibm_photo.png
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:photonic_schematic"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/ibm_photo2.png
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Courtesy: IBM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While RF does provide low latency, it suffers from low bandwidth density,
+ relatively large components and electromagnetic interference.
+ Nanophotonics, tries to improve upon it by providing high bandwidth density,
+ low latency, and distance-independent power consumption, which make it
+ a promising candidate for future NoC designs.
+ 
+\end_layout
+
+\begin_layout Subsection
+Photonic Interconnect components
+\end_layout
+
+\begin_layout Subsubsection
+Laser source
+\end_layout
+
+\begin_layout Standard
+As in the case of RFIs, a primary signal source is necessary that can be
+ further modulated to use it to transfer data.
+ In the case of photonic interconnects, this happens to be the laser source.
+ As depicted in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:photonic_schematic"
+
+\end_inset
+
+, the input light, coming from a laser source and input bits are translated
+ into light pulses by the modulator.
+ As is the case with majority of photonic signalling, it employs a classic
+ example of OOK (discussed in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:ADEncoding"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Waveguides
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/firefly.png
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:firefly"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Waveguides are required for for routing optical signals.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Paraphrase
+\end_layout
+
+\end_inset
+
+Lasers of multiple wavelengths are fed from the laser source into a shared
+ waveguide.
+ Planar optical waveguides can be fabricated using 
+\begin_inset Formula $Si$
+\end_inset
+
+ as core and 
+\begin_inset Formula $SiO_{2}$
+\end_inset
+
+ as cladding with transmission loss as low as 3.6dB/cm and good light confinement
+, allowing for sharp turns (radius of 2um) with minimal loss (0.013dB) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vlasov:04"
+
+\end_inset
+
+ .
+ With Dense Wavelength Division Multiplexing (DWDM) technique, lasers of
+ different wavelengths can be transmitted within the same waveguide without
+ in- terfering with each other.
+ This allows for high bandwidth density and reduced layout complexity.
+ 
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pan:2009:FIF:1555754.1555808"
+
+\end_inset
+
+, researchers propose a photonic interconnect design called Firefly.
+ The Firefly topology (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:firefly"
+
+\end_inset
+
+) uses clusters of 
+\begin_inset Formula $8x8$
+\end_inset
+
+with each cluster further broken into IP sets of 
+\begin_inset Formula $4x4$
+\end_inset
+
+.
+ The IP set might use photonic interconnect to send data to another IP set
+ using one of the 64 wavelengths (generated by the laser source) employing
+ DWDM we earlier cited .
+ Firefly, in particular, creates a logical crossbar connecting all the 16
+ IP sets.
+ The physical fabric for this logical network is the photonic waveguide
+ compelmented by 64 wavelengths of light frequencies.
+\end_layout
+
+\begin_layout Standard
+The Firefly, in turn, was inspired by the Corona architecture
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4556723"
+
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Paraphrase
+\end_layout
+
+\end_inset
+
+Corona exploits nanophotonics by using an all-optical crossbar topology.
+ A 64 × 64 crossbar is implemented with multi-write-single-read optical
+ buses.
+ Each of the 64 buses or channels consists of 4 waveguides, each with 64
+ wavelengths and each channel is assigned to a different node in the network.
+ Even though nanopho- tonics can transmit data at the speed of light, it
+ also consumes considerable amount of energy in the form of static and dynamic
+ power dissipation.
+ Thus, Fireﬂy uses nanophotonics only for long, intercluster links, while
+ utilizing economical electrical signaling for local, intra-cluster links.
+ Hence the total hardware and power consumption is reduced.
+\end_layout
+
+\begin_layout Subsubsection
+Ring Modulators
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/ring_mod.png
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Courtesy: phys.org
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ringmod"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Paraphrase
+\end_layout
+
+\end_inset
+
+Ring modulators are used for Electrical/Optical (E/O) signal conversion,
+ resonant detectors for O/E signal conversion.
+ A schematic representation of the component is shown in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ringmod"
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $V_{F}$
+\end_inset
+
+ here controls the 'Output'.
+ The resonant modulator modulates electrical signal onto a specific wavelength,
+ which traverses the waveguide and is absorbed by the resonant detector
+ of that specific wavelength.
+ This modulation/detection process does not interfere with the lasers of
+ other wavelengths.
+ 
+\end_layout
+
+\begin_layout Subsection
+Photonic Interconnect performance
+\end_layout
+
+\begin_layout Standard
+As previously discussed, the RF suffers from an inherent lack of frequency-bandw
+idth density, essentially because of the low operational frequency-bandwidth.
+ Photonic interconnects has all the benefits provided by RFIs, and improves
+ upon its fallacies.
+ Corona architecture
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4556723"
+
+\end_inset
+
+ provides a gargantuan 10 terabits per second of data-bandwidth , thanks
+ to DWDM and the non-interfering characteristics of light waves.
+\end_layout
+
+\begin_layout Section
+Wireless Interconnects
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Paraphrase
+\end_layout
+
+\end_inset
+
+However, nanophotonics has its own constraints.
+ For example, unlike conventional electrical signaling, static power consumption
+ constitutes a major portion of the total nanophotonic communication power.Nanoph
+otonics also come with the additional energy cost for electrical to optical
+ (E/O) and optical to electrical (O/E) signal conversions.
+ Optical links face technological challenges such as design of efficient
+ transmitter and receiver components, reliability of integrated light source
+ and high manufacturing cost which prevents its commercial adoption.
+ Thus, though the components of a complete photonic NoC, including dense
+ waveguides, switches, optical modulators, and detectors, are now viable
+ for integration on a single silicon chip ,these disadvantages hinder optical
+ interconnections from becoming a feasible solution.
+\end_layout
+
+\begin_layout Standard
+The latest in interconnects , wireless on-chip interconnects tries to assuage
+ these issues and pave way for a low cost and high efficiency source of
+ data-bandwidth.
+ We dissect the paradigm in coming chapters.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "conf/socc/DebCGP10"
+
+\end_inset
+
+, the authors show the supremacy of WiNoCs over the optical counterpart,
+ with following improvements 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+tabulate data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Packet energy per unit Bandwidth (nJ/TBps) for various NoC architectures
+ with increasing system of size
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+System Size
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Flat Mesh
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+WiNoC - THz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+WiNoC - SubTHz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RFNoC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Photonic NoC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+128
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+560.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+31.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+34.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+34.1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+256
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+721.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+19.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+29.6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+512
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1171
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+32.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+35.1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Area overhead (
+\begin_inset Formula $\pm3mm^{2})$
+\end_inset
+
+ in mm
+\begin_inset Formula $^{2}$
+\end_inset
+
+ - 400 mm
+\begin_inset Formula $^{2}$
+\end_inset
+
+is the reference (chip area) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+System Size
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+WiNoC - THz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+WiNoC - SubTHz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RFNoC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Photonic NoC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+128
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+55
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+256
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+120
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+512
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+140
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+110
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+410
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,108 @@
+
+\lhead[\chaptername~\thechapter]{\rightmark}
+
+
+\rhead[\leftmark]{}
+
+
+\lfoot[\thepage]{}
+
+
+\cfoot{}
+
+
+\rfoot[]{\thepage}
+
+
+\chapter{Performance parameters and QoS on NoCs.}
+
+
+\section{Overview}
+
+In this section we discuss Quality of Service (QoS) for communications
+in Systems on Chip (SoC), as the minimum guarantees provided on the
+associated parameters. SoC inter-module communication traffic can
+be classified into four basic classes of service: signaling, real-time,
+RD/WR and block-transfer .
+
+As we have already seen , latency, throughput and reliability are
+the most widely accepted parameters to be considered when talking
+about QoS. Communication traffic of the target SoC can be analyzed
+by means of analytic calculations and simulations, and QoS requirements
+(delay and throughput) for each service class can be accordingly derived.
+In this section we analyze how we can conform to a QoS.
+
+
+\section{Class based traffic}
+
+We have different types of traffic. Some are bound by strict time,
+delay and reliability constraints, while others are not of much importance
+and can be done at liesure. Thus in order to quantize QoS levels and
+check for conformity , we need to categorize the traffic into 4 broad
+groups.\cite{Bolotin:2004:QQA:985396.985400}
+\begin{enumerate}
+\item \textbf{Signaling} covers urgent messages and very short packets that
+are given the highest priority in the network to assure shortest latency.
+This service level is suitable for interrupts and control signals
+and alleviates the need for dedicating special, single-use wires for
+them. 
+\item \textbf{Real-Time }service level guarantees bandwidth and latency
+to real-time applications, such as streamed audio and video processing. 
+\item \textbf{Read/Write (RD/WR)} service level provides bus semantics and
+is hence designed to support short memory and register accesses. 
+\item \textbf{Block-Transfer} service level is used for transfers of long
+messages and large blocks of data, such as cache refill and DMA transfers. 
+\end{enumerate}
+
+\section{Parameters}
+
+
+\subsection{Latency}
+
+Latency is defined as the precursor time to the actual start of data
+transfer. This includes the time consumed for connection establishment
+and propogation delay.
+
+Store-and-forward routing techniques come out as big culprits in assuring
+low latency. Besides incurring high buffer requirements , they are
+subject to huge queing delays, as a router waits for next router to
+have enough free buffer. 
+
+Circuit switching is not an option if we are to maintain a constrained
+latency. Though the service after a connection is made can be better
+than any other option, the wait while a dedicated path is established
+can be a long one. Further this leads to poor resource utilization.
+Since in order delivery is of great importance to us , we find a suitable
+replacement in virtual-circuit switching. The connection establishment
+is rather quick , and decent guarantees can be made once the connection
+is established.
+
+Wormhole routing reduces latency and buffer requirements in the routers.
+It combines virtual cut-through with small unit size and is a currently
+accepted solution for providing latency gurantees. In wormhole switching,
+a packet is transmitted between the nodes in units of flits, the smallest
+units of a message on which flow control can be performed. The header
+flit(s) of a message contains all the necessary routing information
+and all the other flits contain the data elements. The flits of the
+message are transmitted through the network in a pipelined fashion.
+Since only the header flit(s) has the routing information, all the
+trailing flits follow the header flit(s) contiguously. \cite{Mohapatra:1998:WRT:292469.292472}
+
+
+\subsection{Throughput}
+
+Throughput is defined as the maximum theoretical rate of data transfer
+over the network.
+
+Though cirtuit switching can provide best throughput guarantees ,
+it is avoided due to the high cost of establishing and managing circuit
+connections along with poor resource utilization. This is in contrast
+with the completely connection less data transer , which better utilizes
+the hardware , but is prohibitory considering the silicon spent on
+re-ordering buffers.
+
+So we arrive at a trade-off , and choose a hybrid technique. Virtual
+cut through (as has been discussed earlier) solves the constraints
+of being plausible , efficient and reliable.
+
+

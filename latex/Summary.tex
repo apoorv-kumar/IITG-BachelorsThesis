@@ -1,0 +1,37 @@
+
+\chapter*{Introduction}
+
+\addcontentsline{toc}{chapter}{Abstract} 
+
+Intel projects the availability of 100 billion transistors on a 300mm
+die by 2015. This allows to integrate thousands of processors or equivalent
+logic gates on a single die. Unfortunately , we have hit various roadblocks
+on our way to performance enhancement. Heat wall , synchronization
+problem , crosstalk at sub-20nm levels , all equally fatal. This forces
+us to look towards horizontal rather than vertical scaling. We use
+many transistors to increase the working units, rather than improving
+one unit. The major challenge lies in trying to map our applications
+initially designed for serial execution on these massively parallel
+machines. Further since our computers need to handle dynamic loads
+, dynamic mapping comes out as the natural preference for mapping.
+
+On-chip packet-switched network have been proposed as a solution for
+the problem of global interconnect in deep sub-micron VLSI Systems
+on Chip (SoC). Networks on Chip (NoC) can address and contain major
+physical issues such as synchronization, noise, error correction and
+speed optimization. NoC can also improve design productivity by supporting
+modularity and reuse of complex cores, thus enabling a higher level
+of abstraction in architectural modeling of future systems .
+
+In this report we discuss the various paradigms available for running
+real life applications on the NoC architectures. First we highlight
+the compulsions that forced us to switch from the currently prevalent
+architectures. Then we justify why we set aside other alternative
+architectures in favour of the network based onces. Once we are on
+firm footing as to why we have chosen the aforementioned paradigm
+, we discuss the parameters that define scalability ,  low cost and
+good performance. Further we discuss in details how we plan to run
+our applications on the many-cores , that don't nearly resemble the
+bus-based architecture we are so used to program for. We show how
+centralized mapping has very binding limitations , and that decetralized
+mapping is the best way for the distant future. 

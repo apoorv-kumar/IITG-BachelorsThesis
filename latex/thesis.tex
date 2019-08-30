@@ -1,0 +1,192 @@
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,a4paper,english,intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage,fleqn]{scrbook}
+\usepackage{lmodern}
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setcounter{secnumdepth}{3}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{babel}
+\usepackage{calc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+\usepackage{breakurl}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\special{papersize=\the\paperwidth,\the\paperheight}
+
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\@ifundefined{date}{}{\date{}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% increase link area for cross-references and autoname them
+\AtBeginDocument{\renewcommand{\ref}[1]{\mbox{\autoref{#1}}}}
+\newlength{\abc}
+\settowidth{\abc}{\space}
+\AtBeginDocument{%
+\addto\extrasenglish{
+ \renewcommand{\equationautorefname}{\hspace{-\abc}}
+ \renewcommand{\sectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsubsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\figureautorefname}{Fig.\negthinspace}
+ \renewcommand{\tableautorefname}{Tab.\negthinspace}
+}
+}
+
+% in case somebody want to have the label "equation"
+%\renewcommand{\eqref}[1]{equation~(\negthinspace\autoref{#1})}
+
+% that links to image floats jumps to the beginning
+% of the float and not to its caption
+\usepackage[figure]{hypcap}
+
+% the pages of the TOC is numbered roman
+% and a pdf-bookmark for the TOC is added
+\let\myTOC\tableofcontents
+\renewcommand\tableofcontents{%
+  \frontmatter
+  \pdfbookmark[1]{\contentsname}{}
+  \myTOC
+  \mainmatter }
+
+% make caption labels bold
+\setkomafont{captionlabel}{\bfseries}
+\setcapindent{1em}
+
+% enable calculations
+\usepackage{calc}
+
+% fancy page header/footer settings
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+% increase the bottom float placement fraction
+\renewcommand{\bottomfraction}{0.5}
+
+% avoid that floats are placed above its sections
+\let\mySection\section\renewcommand{\section}{\suppressfloats[t]\mySection}
+
+\makeatother
+
+\begin{document}
+
+
+
+\subject{Seminar Report}
+
+
+\title{Dynamic Decentralized Mapping on NoC Architectures}
+
+
+\author{Apoorv Kumar}
+
+
+\date{09010111}
+
+
+\publishers{%
+\framebox{\begin{minipage}[t]{0.4\columnwidth}%
+%
+\end{minipage}}\vspace{\baselineskip}\\
+Department of\\
+Computer Science \& Engineering\\
+Indian Institute of Technology - Guwahati\vspace{-3cm}
+}
+
+
+\lowertitleback{\textbf{Guiding Professor}\smallskip{}
+\\
+Dr. Hemangee Kapoor\bigskip{}
+\bigskip{}
+\\
+}
+
+
+\dedication{Where the ENIAC is equipped with 18000 vacuum tubes and weighs 30
+tons , computers in future may have only 1000 vacuum tubes and weigh
+only 1.5 tons. {\small - Popular Mechanics , 1944}}
+
+\maketitle
+\pagebreak{}
+
+
+\lhead{\rightmark}
+
+
+\rhead[\leftmark]{}
+
+
+\lfoot[\thepage]{}
+
+
+\cfoot{}
+
+
+\rfoot[]{\thepage}
+
+\tableofcontents{}
+
+\newpage{}
+
+\pagestyle{plain}
+
+\include{Summary}
+
+\pagebreak{}
+
+\pagestyle{fancy}
+
+
+\lhead[\chaptername~\thechapter]{\rightmark}
+
+\include{chapter-1}
+
+\include{chapter-2}
+
+\include{chapter-3}
+
+\include{chapter-4}
+
+
+\title{\include{chapter-5}}\maketitle
+
+
+\pagebreak{}
+
+
+\lhead[]{Acknowledgments}
+
+
+\rhead[Acknowledgments]{}
+
+\include{Acknowledgments}
+
+\pagebreak{}
+
+
+\lhead[]{\rightmark}
+
+
+\rhead[\leftmark]{}
+
+\bibliographystyle{alpha}
+\bibliography{thesisExample}
+
+\end{document}

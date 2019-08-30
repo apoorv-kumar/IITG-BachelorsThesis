@@ -1,0 +1,3435 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass scrbook
+\begin_preamble
+% increase link area for cross-references and autoname them
+\AtBeginDocument{\renewcommand{\ref}[1]{\mbox{\autoref{#1}}}}
+\newlength{\abc}
+\settowidth{\abc}{\space}
+\AtBeginDocument{%
+\addto\extrasenglish{
+ \renewcommand{\equationautorefname}{\hspace{-\abc}}
+ \renewcommand{\sectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsubsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\figureautorefname}{Fig.\negthinspace}
+ \renewcommand{\tableautorefname}{Tab.\negthinspace}
+}
+}
+
+% in case somebody want to have the label "Gleichung"
+%\renewcommand{\eqref}[1]{Gleichung~(\negthinspace\autoref{#1})}
+
+% put the link to figure floats to the beginning
+% of the figure and not to its end
+\usepackage[figure]{hypcap}
+
+
+
+% the pages of the TOC is numbered roman
+% and a pdf-bookmark for the TOC is added
+\let\myTOC\tableofcontents
+\renewcommand\tableofcontents{%
+  \frontmatter
+  \pdfbookmark[1]{\contentsname}{}
+  \myTOC
+  \mainmatter }
+
+% make caption labels bold
+\setkomafont{captionlabel}{\bfseries}
+\setcapindent{1em}
+
+% enable calculations
+\usepackage{calc}
+
+% fancy page header/footer settings
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+% increase the bottom float placement fraction
+\renewcommand{\bottomfraction}{0.5}
+
+% avoid that floats are placed above its sections
+\let\mySection\section\renewcommand{\section}{\suppressfloats[t]\mySection}
+\end_preamble
+\options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage,fleqn
+\use_default_options true
+\master thesis.lyx
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman lmodern
+\font_sans lmss
+\font_typewriter lmtt
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_title "Your title"
+\pdf_author "Your name"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
+\papersize a4paper
+\use_geometry false
+\use_amsmath 2
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\branch NoChildDocument
+\selected 0
+\filename_suffix 0
+\color #ff0000
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Left Header
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+chaptername
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thechapter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+rightmark
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Enable page headers and add the chapter to the header line.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Footer
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Right Footer
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Wireless NoC (WiNoC)
+\end_layout
+
+\begin_layout Section
+Overview
+\end_layout
+
+\begin_layout Standard
+CMOS based wireless interconnection enables on-chip multi-hop communication
+ by the embedding wireless channels.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:adc_dac"
+
+\end_inset
+
+ shows a simplistic base case of wireless on-chip communication.
+ One of the PE decides to send data to another.
+ It forwards the data to the Digital to Analog Conversion unit (DAC) that
+ is responsible to encode the digital data in analog format using one of
+ the schemes discussed in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:ADEncoding"
+
+\end_inset
+
+.
+ Once the conversion is done, the analog data is forwarded to the transmitter
+ that pushes the data onto the channel .
+ Upon reception, the receiver transfers the data to Analog to Digital Conversion
+ (ADC) unit, which in turn translates the analog signal into its constituent
+ digital information.
+ This digital data is conveyed to the recipient PE, thus completing the
+ process of transmission.
+\end_layout
+
+\begin_layout Standard
+The process of broadcast on the channel provides unprecendented flexibility
+ to the setup and thus allows completely reconfigurable topologies supporting
+ a wide range to routing strategies.
+ Interestingly, a satisfactory implementation can be conceived using the
+ current CMOS technology without the need of embedding a foreign technology.
+ The wireless links serve as a high-bandwidth and low-latency replacement
+ for the wired multihop connects.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:adc_dac"
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/wireless_power.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Depending upon these factors the power involved in transmitting a bit (on
+ average) can vary tremendously across chips.
+ However, we can create a generic model.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{wirelesslink}=(P_{transmitter}+P_{receiver}+P_{ADC}+P_{DAC})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Please note that the baseband amplifiers , up/down conversion mixers etc.
+ are included in the ADC and DAC black-boxes.
+\end_layout
+
+\begin_layout Section
+Internal Characteristics
+\end_layout
+
+\begin_layout Subsection
+Frequency
+\end_layout
+
+\begin_layout Standard
+Firstly, we need to choose the bandwidth we want to operate on.
+ This might vary from the tera Hz region to a few giga Hz.
+ It is arguably the most important design decision, determining other aspects
+ like design of wireless transceivers and peformance of physical layer.
+ The WiNoCs primarily under the radar of current research can be classified
+ into four broad groups according to the frequency in which they operate
+ (depicted in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:freq_ranges"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/freq_ranges.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:freq_ranges"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Ultra Wide Band (UWB)
+\end_layout
+
+\begin_layout Standard
+UWB lies at the lower end of the wireless spectrum that can be used on NoCs.
+ This band has been well established in terms of feasibility of implementation
+ by various groups, notably by 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4531729"
+
+\end_inset
+
+, who utilize a carrier-free impluse radio-based UWB transciever to design
+ a WiNoC.
+ The transmitter is designed to generate the desired pulse with suitable
+ driving strength so that signal can be efﬁciently radiated from an on-chip
+ antenna.
+ A CMOS integrated Gaussian monocycle pulse (GMP) generator creates an ultra
+ short pulse that yeilds a very low power spectral density.
+ The receiver constitutes of a wideband LNA, a correlator, an ADC, and synchroni
+zation circuits.
+ It employs a 2.98-mm-long meander type dipole antenna that gives 1 mm data
+ transmission range, whereas the transceiver can give a sustained data rate
+ of 1.16 Gb/s on a channel with central frequency of 3.6 GHz.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+mm Wave
+\end_layout
+
+\begin_layout Standard
+As per the ITRS, for the 16nm CMOS technology, the cutoff frequency and
+ unity maximum available power gain frequency are targetted between 600
+ GHz and 1 THz, respectively.
+ This level of scaling assists in integrating the WiNoC units on chip as
+ the units themselves are expected to scale proportionally.
+ This also allows us to explore mm-wave as potential frequency candidate
+ in WiNoCs.
+ The on-chip antenna should provide us with the best power gain with minimal
+ power and area requirements.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4277869"
+
+\end_inset
+
+ presents a metal zig-zag antenna as one of the most apt candidates for
+ the purpose.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "6197727"
+
+\end_inset
+
+ shows that a 0.38-mm antenna can achieve a 3 dB bandwidth of 16 GHz with
+ a central frequency of 57.5 GHz.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "O:2005:FOI:1129601.1129739"
+
+\end_inset
+
+ argues that the metal lines over the antenna doesn't affect the the gain
+ factor, thus making it compatible with the current fabrication process.
+\end_layout
+
+\begin_layout Subsubsection
+sub-THz Wave
+\end_layout
+
+\begin_layout Standard
+The minimum antenna size scales down with the wavelength.
+ This makes sub-THz region all the more lucrative as it saves real estate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lee:2009:SMW:1614320.1614345"
+
+\end_inset
+
+ recommends that the antenna be put in a polyimide layer, deposited of the
+ top silicon, such that most electromagnetic energy could be conﬁned within
+ this low-loss dielectric layer.
+ It observes that our primary aim should be to minimize the radiation penetratin
+g into the substrate since substrate loss is a major factor in determining
+ chip performance.
+ The low loss polyimide layer can be shown to constrain most of the signal
+ within the layer, boosting the range of communication to a centimeter.
+ Since it is possible to switch a CMOS transistor as fast as 500 GHz at
+ 32 nm CMOS, this allows us to implement a large number of high frequency
+ bands for the on-chip wireless network.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "tag:multichannel_lee"
+
+\end_inset
+
+Using a 32 nm CMOS process, empirically, there are expected be total of
+ 16 available channels, from 100 GHz to 500 GHz, for the on-chip wireless
+ network, and each channel can transmit at 10 to 20 Gbps, putting the raw
+ aggregate data rate to upto 320 Gbps.
+ Again, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lee:2009:SMW:1614320.1614345"
+
+\end_inset
+
+ predicts that only 1-2% of the power would be used in wireless communication
+ with a simple ASK transceiver implementation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+PP
+\end_layout
+
+\end_inset
+
+The mm-wave frequency band can provide abundant bandwidth while not suffering
+ from severe signal degradation, thanks to the short communication distances
+ in the WiNoC.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lee:2009:SMW:1614320.1614345"
+
+\end_inset
+
+, a noncoherent on–off keying (OOK) based transceiver is designed for an
+ mm-wave WiNoC, OOK being selected as it allows relatively simple and low-power
+ circuit implementation.
+\end_layout
+
+\begin_layout Subsubsection
+THz Wave
+\end_layout
+
+\begin_layout Standard
+As observed before, increase in communication frequency is a win-win scenario.
+ Antenna characteristics of carbon nanotubes (CNTs) in the THz/optical frequency
+ range has been well investigated
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4420100"
+
+\end_inset
+
+.
+ These antennas can achieve a bandwidth of around 500 GHz, whereas antennas
+ operating in the millimeter wave range achieve bandwidths of tens of gigahertz.
+ A higher frequency-bandwidth translates into a higher data rate.
+ Certain specific characteristics of CNTs make them well suited for the
+ purpose.
+ Extremely low wavelength demands a very thin antenna structure for efficient
+ transmission and reception.
+ CNTs are naturally just a few nanometers across in diameter, what is virtually
+ impossible to acheive using any other fabrication technique.
+ Secondly, the virtually defect free CNTs show minimal surface loss and
+ thus can detect weak signals very effectively.
+\end_layout
+
+\begin_layout Subsection
+Antennas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+PP
+\end_layout
+
+\end_inset
+
+To ensure the high throughput and energy efﬁciency of the WiNoC, the transceiver
+ circuitry has to provide a very wide bandwidth as well as low power consumption.
+ In designing the on-chip mm-wave wireless transceiver, low power design
+ considerations need to be taken into account both at the architecture and
+ circuit levels.
+\end_layout
+
+\begin_layout Subsubsection
+Meander type dipole antenna
+\end_layout
+
+\begin_layout Standard
+A meander type (linear) dipole antenna is one of the simplest kinds, made
+ of two conductors separated by a small distance, with a center-fed driven
+ element as shown in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "wrap:fig:dipole"
+
+\end_inset
+
+.
+ The signal voltage is applied to the antenna at the center, between the
+ two conductors.
+ The characteristic waves produced by them is shown in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "wrap:fig:dipole_radiation"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/dipole.gif
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "wrap:fig:dipole"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/dipoleradiation.png
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "wrap:fig:dipole_radiation"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These antennas are primarily used in the UWB based NoCs due to their simplicity
+ and low hardware demands.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table:meander_chars"
+
+\end_inset
+
+ shows how the antenna characteristics are supposed to vary with the fabrication
+ technology 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "10.1109/NOCS.2012.11"
+
+\end_inset
+
+.
+ As apparent, the 
+\begin_inset Formula $energy/bit$
+\end_inset
+
+ scales proportionally with transistor size, whereas bandwidth scales inversely,
+ making it a viable prospect for the future.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/uwbtable.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "table:meander_chars"
+
+\end_inset
+
+(courtesy: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "5948560"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Zig-Zag antenna
+\end_layout
+
+\begin_layout Standard
+A zig-zag antenna (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "wrap:fig_zigzag"
+
+\end_inset
+
+) can be seen as a squashed helical antenna with planar geometry for ease
+ in fabrication.As discussed previously, it has been often used for mm-wave
+ communication to enhance the communication range over a centimeter.
+ The viability in terms of implementation has been demonstrated in an early
+ effort in
+\begin_inset CommandInset citation
+LatexCommand cite
+key "1386412"
+
+\end_inset
+
+ used for distributing clock signals.
+ The signal frequency is 14.3 GHz, and the power incident to the antenna
+ is 21 dBm.
+ Zig-zag antenna is often implemented as a dipole antenna, with the zig-zag
+ structure replacing the usual linear conductor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement o
+overhang 0col%
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/zigzagantenna.png
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "wrap:fig_zigzag"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+CNT antenna
+\end_layout
+
+\begin_layout Standard
+Due to a fundamentally different material and structures, CNT is quite different
+ from the metal thin-wire antenna.
+ The antenna performance such as gain can be adjusted by changing the conductivi
+ty of composite, while it is not possible for materials with fixed conductivity
+ such as copper.
+ As already discussed, CNTs are sleek and just a few nanometers across in
+ diameter and they show minimal surface loss due to being defect-free.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "5976397"
+
+\end_inset
+
+ reports that the bandwidth of a CNT composite single antenna beats that
+ of copper antenna operating over the 24 to 34 GHz frequency range.
+ It further shows the effectivity of CNT based antenna in the mm-wave region.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4420100"
+
+\end_inset
+
+ discusses its characteristics of low radiation resistance and efficiency
+ in the THz range.
+ It also recommends using a bundle of CNTs, claiming a 30 dB improvement
+ in efficiency at 2 THz resonance frequency when using a rectangular geometry
+ bundle.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Misewich02052003"
+
+\end_inset
+
+, it has been demonstrated that semiconducting CNTs emit infrared photons
+ when an electron-hole pair recombines across the band- gap.
+ Thus, the CNT also acts as the signal generator, which reduces the transceiver
+ complexity considerably.
+\end_layout
+
+\begin_layout Standard
+Below is a summary of frequency-antenna combinations and their performance
+ .
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+\lang czech
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="7">
+<features islongtable="true" longtabularalignment="left">
+<column alignment="center" valignment="top" width="8page%">
+<column alignment="center" valignment="top" width="8page%">
+<column alignment="center" valignment="top" width="10page%">
+<column alignment="center" valignment="top" width="15page%">
+<column alignment="center" valignment="top" width="8page%">
+<column alignment="center" valignment="top" width="7page%">
+<column alignment="center" valignment="top" width="8page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Frequency Range
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Technology Node
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Antenna Used
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Modulation Scheme
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Transmission Range
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Data Rate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Energy/bit
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+UWB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+180 nm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Meander type dipole
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Pulse position modulation or biphase modulation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+1 mm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+1.16Gbps
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Not available
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+mm-Wave
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+65 nm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+ZigZag 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Non-coherent OOK
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+20 mm 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+16Gbps
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+2.3pJ
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Sub THz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+32 nm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Not Available
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+ASK
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+10-20 mm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+320Gbps
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+4.5pJ
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+THz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Not Applicable
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Multi-walled CNT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+Non-coherent OOK
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+23 mm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+240Gbps
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang czech
+0.33pJ
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(courtesy: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "6197727"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Subsection
+Topology
+\end_layout
+
+\begin_layout Subsubsection
+Units
+\end_layout
+
+\begin_layout Paragraph
+Node
+\end_layout
+
+\begin_layout Standard
+A common node on the NoC has three essential elements.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/IP.jpg
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Processor - Consumes data and generates traffic.
+\end_layout
+
+\begin_layout Itemize
+Router - Takes the routing decisions and maintains flow of packet data.
+\end_layout
+
+\begin_layout Itemize
+Network Interface - Connects the router to IP core.
+\end_layout
+
+\begin_layout Paragraph
+Link
+\end_layout
+
+\begin_layout Standard
+A link connects two routers.
+ A router may have multiple bi-directional/uni-directional links, that may
+ seperately correspond to data and control.
+ Link is an abstract concept and can be established over any physical medium
+ like wired, optical, wireless etc.
+ Wired links cannot be reconfigured as they are hard-links.
+ On the other hand, wireless links are flexible and can be established dynamical
+ly.
+\end_layout
+
+\begin_layout Subsubsection
+Qualifiers
+\end_layout
+
+\begin_layout Standard
+Here we discuss certain desireable characteristics that a WiNoC may or may
+ not posses.
+\end_layout
+
+\begin_layout Paragraph
+Hybrid
+\end_layout
+
+\begin_layout Standard
+A purely wired network suffers from the issues that we have already discussed.
+ But even having a completely wirless network is non optimal because not
+ only does it bring in the inordinate overhead of excessive number of wireless
+ transceivers but also actually run a performance deficit compared to wired
+ network for short distances.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/powervsdist.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Courtesy:
+\begin_inset CommandInset citation
+LatexCommand cite
+key "6197727"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "6197727"
+
+\end_inset
+
+ calculates the 'tipping point' where the wireless shortcuts outdo their
+ wired counterparts for mm-wave.
+ Clearly, this happens only for distances greater than a certain value (here
+ 7mm).
+ So we would be better off using wired links for communicating to distances
+ less than 7mm, and the opposite thereafter.
+ This demands that we employ both wired and wireless links on our network
+ and use the one that suits our purpose better.
+ This ambivalence of paradigms is called a '
+\series bold
+hybrid
+\series default
+' network.
+\end_layout
+
+\begin_layout Standard
+The hybrid network, not only does better because it selects the best of
+ two paradigms, but also because it can interleave the tasks between two
+ distinct networks.
+ For example, the wired network could be ear-marked for the high priority
+ control packets, whereas the wireless network could be assigned the task
+ of bulk data transfer.
+ During the process of access contention, the nodes could contend for a
+ channel and all the while the current channel 'owner' would transfer its
+ data over the channel.
+ By the time the current 'owner' is done , the next 'owner' would have been
+ decided, which immediately gains control.
+ This interleaving potentially reduces the contention overhead to zero.
+\end_layout
+
+\begin_layout Standard
+Because of these benefits, it is by default assumed that the presence of
+ wireless network implies the presence of wired.
+ So, we usually refer to the hybrid network as just 
+\begin_inset Quotes eld
+\end_inset
+
+wireless
+\begin_inset Quotes erd
+\end_inset
+
+ network.
+\end_layout
+
+\begin_layout Paragraph
+Multichannel
+\end_layout
+
+\begin_layout Standard
+The high frequency paradigms at the high end UWB and beyond allows enough
+ room to distribute the entire bandwidth into multiple channels of equal
+ bandwidth seperated by guard bands.
+ Such waves have characteristics that their signal has very short pulse
+ duration and offer high data rate ( 
+\begin_inset Formula $C$
+\end_inset
+
+ ) with constant signal-to-noise ratio ( 
+\begin_inset Formula $\frac{S}{N}$
+\end_inset
+
+ ), achieved by increasing the bandwidth ( 
+\begin_inset Formula $B$
+\end_inset
+
+ ), following Shannon’s capacity equation (
+\begin_inset Formula $C=B\, log_{2}(1+S/N)$
+\end_inset
+
+ ).
+ This allows us to implement FDMA, which in turn helps carry multiple communicat
+ions in parallel.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "5948560"
+
+\end_inset
+
+ proposes a Multiple Channel Wireless NoC (McWiNoC) using UWB.
+ It disperses the RF nodes on-chip to form a 
+\begin_inset Quotes eld
+\end_inset
+
+super-train
+\begin_inset Quotes erd
+\end_inset
+
+ network.
+ Utilizing the reconfigurability of wireless networks to configure the topology
+ with variable communication range, it employs a channel arbitration scheme
+ to grant multi-channel access and to resolve channel contention.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lee:2009:SMW:1614320.1614345"
+
+\end_inset
+
+ aruges about the viability of multiple non-overlapping channels in WiNoCs
+ (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tag:multichannel_lee"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Paragraph
+Small World
+\end_layout
+
+\begin_layout Standard
+Small world networks are special networks that guarantees a very small path
+ between any two nodes, even though the network is scaled up many orders
+ of magnitude.
+ Formally, the diameter of network (maximum path length between any two
+ nodes) should not grow faster than 
+\begin_inset Formula $O(\, log(n)\,)$
+\end_inset
+
+, where n is the number of nodes in the network.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename images/wcube2.png
+	width 6cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/Wcube4.png
+	width 7cm
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Remove this pic
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An example of small world network is the WCube
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lee:2009:SMW:1614320.1614345"
+
+\end_inset
+
+.
+ A WCube is recursively built 2D structure.
+ A high-level WCube is composed of low level ones.
+ The level of WCube 
+\begin_inset Formula $'n'\:(n\geq0)$
+\end_inset
+
+ is mentioned in the subscript as 
+\begin_inset Formula $WCube{}_{n}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $WCube_{0}$
+\end_inset
+
+ is the most basic building block that is used to construct larger WCubes.It
+ is represented by a single wireless router that is responsible for a cluster
+ of m = 16 base routers of the baseline CMesh, thus comprising 4m nodes.
+ An n-level WCube, incorporating the baseline 
+\begin_inset Formula $k-way$
+\end_inset
+
+ CMesh (with a cluster of 
+\begin_inset Formula $m$
+\end_inset
+
+ base routers associated with a single wireless router), can support up
+ to 
+\begin_inset Formula $2^{2n}×m×k$
+\end_inset
+
+ nodes.
+ Practical considerations force us to pin 
+\begin_inset Formula $k$
+\end_inset
+
+ at 4 and 
+\begin_inset Formula $m$
+\end_inset
+
+ at 16.
+ This gives us the maximum number of nodes that can be supported as 
+\begin_inset Formula $2^{2n+6}$
+\end_inset
+
+.
+ The diameter of this network comes out as 
+\begin_inset Formula $2n$
+\end_inset
+
+, which ensures it's scalability even for a gargantuan size of network.
+\end_layout
+
+\begin_layout Standard
+After the qualifiers that any topology could choose to conform to, we now
+ see the various topologies that are widely used.
+\end_layout
+
+\begin_layout Subsubsection
+Bus topology
+\end_layout
+
+\begin_layout Standard
+In the bus topology each node is connected to a single central wire.
+ A signal from the source travels in both directions to all cores connected
+ on the bus cable until it finds the intended recipient.
+ The nodes that are not the recepient just ignore the data after reading
+ the packet or are pre-programmed by the controller to ignore it altogether.
+ Alternatively, if the addresss matches the node address, the data is accepted.
+ Since the bus topology consists of only one wire, it is rather inexpensive
+ to implement when compared to other topologies.
+ However, the low cost of implementing the technology is offset by the high
+ cost of arbitration and management.
+ Additionally, it can be a the single point of failure.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/wirelessbus.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wirelessbus"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+<Bus defn here>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the context of wireless NoCs, the trivial implementation of a bus consists
+ of nodes, each armed with a trasceiver pair and an antenna.
+ The range of transmitter is high enough to contact any receiver on the
+ chip.
+ There is a single channel and all contend for it, with the selected node
+ getting chance to transmit.
+ It thus emulates a bus, providing a one hop transmission and a single channel.
+\end_layout
+
+\begin_layout Subsubsection
+Ring topology
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+<Ring defn here>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A network topology that is set up in a circular fashion in which data travels
+ around the ring in one/both direction(s) and each device on the on the
+ path acts as a repeater to keep the signal strong as it travels.
+ Each device incorporates a receiver for the incoming signal and a transmitter
+ to send the data on to the next device in the ring.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/winocring.png
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wirelessring"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the wireless NoCs, ring structure is often found while implementing a
+ hierarchical structure as depicted in the 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:wirelessring"
+
+\end_inset
+
+.
+ A subnet has its own structure and works using a wired network for local
+ communication.
+ For global data access, they use the wireless nodes that are arraged in
+ a ring form and have access only to the immediately adjacent node.
+\end_layout
+
+\begin_layout Subsubsection
+Mesh topology
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+<Mesh defn here>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mesh consists of nodes connected to its neighbors in a regular patter.
+ The number of connections in a full mesh = 
+\begin_inset Formula $n(n-1)/2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/wireless_mesh.png
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wirelessmesh"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mesh is the most common topology found on the wired NoCs both because of
+ it's effectiveness and ease of fabrication.
+ In the wireless NoC paradigm, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "6197727"
+
+\end_inset
+
+ discusses a noncoherent OOK based transceiver for implementing node to
+ node mesh.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Star topology
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+<Mesh defn here>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Star topology every node is connected to central node called hub or switch.
+ The switch is the server and the nodes are the clients.
+ The network does not necessarily have to resemble a star to be classified
+ as a star network, but all of the nodes on the network must be connected
+ to one central entity.
+ All traffic that traverses the network passes through the central hub.
+ The hub acts as a signal repeater.
+ The star topology is considered the easiest topology to design and implement.
+ An advantage of the star topology is the simplicity of adding additional
+ nodes.
+ The primary disadvantage of the star topology is that the hub represents
+ a single point of failure.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/winocstar.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wirelessmesh-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Structure-hybrid topology
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+< defn here>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sturcture-hybrid networks use a combination of any two or more topologies
+ in such a way that the resulting network does not exhibit one of the standard
+ topologies.It often involves using many heterogenous topologies in a hierarchica
+l fashion interfaced with each other using wired or wireless links.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/hybridtopo.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wirelessmesh-1-1"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Change the pic
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As shown in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "6197727"
+
+\end_inset
+
+, we reap the benefits of wireless links only if they are used at a certain
+ distance.
+ So the hybrid-structure networks try to connect local wired subnets using
+ the low latency high bandwidth wireless links.
+\end_layout
+
+\begin_layout Subsection
+Media Access Control (MAC) protocols
+\end_layout
+
+\begin_layout Standard
+Flow, vaguely is defined as a sequence of packets from source node to the
+ destination node.
+ In the wired NoC, flows contend for a specific router or link.
+ But the scenario in WiNoCs is quite different owing to the single (handful
+ of) channels available for communication.
+ Also, since the system is distributed, synchronization is a difficult art
+ to perfect.
+ The sharing protocol needs to partition the bandwidth well across flows
+ and nodes which are in transmissions range (called contention domains)
+ of each other.
+ Further we have to deal with issues like hidden-node and exposed-node problem.
+ Contention can be broadly classified into two types: 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Paraphrase both defs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Intra-flow contention
+\series default
+ is caused by nodes along the same flow contend among themselves for access
+ to the wireless medium.
+ A path could be seriously congested if the traffic source injects more
+ packets into the traffic flow (especially for busty traffic) than the intermedi
+ate nodes can forward.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Inter-flow contention
+\series default
+ arises when multiple flows pass through the same region.
+ The forwarding nodes of a flow encounter competition from not only their
+ own flow but also other flows passing through them or their vicinity.
+ The network will be seriously congested if the source nodes inject more
+ packets into the crossing flows than the nodes in these contention domains
+ can forward.
+\end_layout
+
+\begin_layout Subsubsection
+Conflict based
+\end_layout
+
+\begin_layout Paragraph
+CSMA/CA
+\end_layout
+
+\begin_layout Standard
+Carrier sense multiple access with collision avoidance (CSMA/CA) is a network
+ multiple access method in which carrier sensing is used, but nodes attempt
+ to avoid collisions by transmitting only when the channel is sensed to
+ be "idle".
+ However, this check doesn't ensure absence of collision or even detection
+ (without use of explicit ECC codes, which is not a very likely prospect
+ on a chip).
+\end_layout
+
+\begin_layout Standard
+For removing the hidden terminal problem, one needs to implement a seperate
+ RTS-CTS protocol which itself is too much of a temporal overhead, not to
+ mention the additional circuit complexity that needs to be added.
+ Exposed terminal problem is a still more difficult issue to solve, which
+ if left that way, would eat into the effective bandwidth of the system.
+\end_layout
+
+\begin_layout Standard
+Further more , the protocol fails to leverage the wired network lying underneath
+ for improving the network performance.
+ Thus, it is not a very strong contender as far as MAC protocols for on-chip
+ networks are concerned.
+\end_layout
+
+\begin_layout Paragraph
+SD-MAC
+\end_layout
+
+\begin_layout Standard
+Introduced in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4531729"
+
+\end_inset
+
+, it is a synchroized and distributed MAC protocol.
+ It uses a binary countdown mechanism to resolve contention.
+ The contending nodes pick up random number inside a range and forward it
+ to the intended recipient.
+ The receiver then operates upon the bits, and after a few rounds of shortlistin
+g, arrives at the winner sender.
+ It then proceeds to inform the sender that it may start the transmission.
+ Thus, transmission is broken down into following four steps:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Initialize
+\series default
+ : involves choosing the random number and associated operations.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Contention 
+\series default
+: contend for the channel by conveying the randomly chosen number to recipient.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Access authorization
+\series default
+ : see if the channel authorizes the request.
+\end_layout
+
+\begin_layout Itemize
+If yes 
+\series bold
+Transmit.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Else decrease size of range in which random number was chosen (this improves
+ the probability of being selected the next time) and contend for the channel
+ again.
+\end_layout
+
+\begin_layout Itemize
+The above step ensures fairness as the node contending for sufficient amount
+ of time is guaranteed to get a turn after some time.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Interestingly, the fact that receiver selects the final sender completely
+ alleviates the issues of hidden terminal and exposed terminal problem.
+ Removal of hidden terminal is very important as it has a bearing on the
+ net throughput.
+ Similarly, removing exposed terminal issue improves the channel utilization.
+\end_layout
+
+\begin_layout Standard
+SD-MAC utilizes two layers of communication - employing the wireless backbone
+ for data transmission and wired network for control data.
+ Synchronization is done through the faster medium - that is the wireless
+ backbone.
+ Competition for the next data transmission slot is interleaved with the
+ current data transmission, this ensures that the temporal overhead of contentio
+n process is zero.
+\end_layout
+
+\begin_layout Standard
+transmission slot (both on separate media - wired and wireless).
+ INIP - sync + registration CCP - series of N slots
+\end_layout
+
+\begin_layout Subsubsection
+Conflict free
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/tdma_fdma_cdma.png
+	width 12cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Courtesy: Dr.-Ing.
+ Erik Haas, German Aerospace Center
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ftc"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the conflict free mechanisms, the nodes don't need to contend for effective
+ data-bandwidth as it is pre-determined externally.
+\end_layout
+
+\begin_layout Paragraph
+TDMA
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+PP entire def
+\end_layout
+
+\end_inset
+
+TDMA is a channel access method used for shared method for shared medium
+ network.
+ It can accommodate multiple users in a same frequency channel by dividing
+ the frequency channel usage in time slots 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ftc"
+
+\end_inset
+
+.
+ In TDMA method the time axis is divided into a number of time slots, which
+ are pre-assigned to different nodes.
+ Each node has right to transmit freely during that slot assigned to it
+ and all the system resources are devoted to it during that slot.
+ Every such period is known as frame or cycle.
+ In basic TDMA each node has exactly one slot in every frame.
+ The more general TDMA schemes in which more slots are assigned to one node
+ within a frame is referred to as generalized TDMA.
+ For proper coordination of nodes in TDMA the nodes must be synchronized
+ so that each node knows exactly when and for how long it can transmit.
+ It is useful in the lower frequency regions like mm-wave, due to limitations
+ in the available bandwidth and complexity of transceiver designs, having
+ multiple non-overlapping channels is not an option.
+\end_layout
+
+\begin_layout Standard
+There are various ways of achieving this coordination but few are viable
+ on a NoC.
+ One of those is the token based protocol.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mmwaveperf"
+
+\end_inset
+
+ discusses the implementation of what is close to a token based TDMA.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+PP
+\end_layout
+
+\end_inset
+
+In this scheme, the particular wireless node possessing the token can broadcast
+ ﬂits into the wireless medium.
+ All other hubs will receive the ﬂit as their antennas are tuned to the
+ same frequency band.
+ When the destination address matches the address of the receiving hub then
+ the ﬂit is accepted for further routing.
+ It is routed either to a core in the subnet of that hub or to an adjacent
+ hub.
+ The token is released to the next wireless node after all ﬂits belonging
+ to a single packet at the current token-holding hub are transmitted.
+ But the token passing protocol does not scale well with increasing number
+ of wireless nodes.
+ 
+\end_layout
+
+\begin_layout Standard
+However, the above discussed protocol differs from pure TDMA in one, it
+ doesn't relinquish the token at the end of time slot , but at the end of
+ packet transmission, second, the token passing delay eats into the time
+ slot.
+ Speciﬁcally, the token return period is bound to increase alongside the
+ number of wireless nodes.
+ This means that the time taken for acquiring the wireless medium by a node
+ also increases.
+ In order to solve these problems we need to look at other options.
+ 
+\end_layout
+
+\begin_layout Paragraph
+CDMA
+\end_layout
+
+\begin_layout Standard
+CDMA utilizes orthogonal codes to allow multiple nodes to use the same channel
+ at the same time
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ftc"
+
+\end_inset
+
+.
+ The idea is to have one from a set of orthogonal codes available at each
+ of the nodes.
+ While sending a packet, the sender node multiplies the data with the chip-code
+ of the receiver.
+ This encoded data thus created becomes a noise (that is automatically eliminate
+d) to every node other than the receiver.
+ On receiving the data, the receiver multiplies data with its chip-code
+ and gets the original data back.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "6272112"
+
+\end_inset
+
+ uses a metal zig-zag antenna, OOK modulator/demodulator alongside CDMA
+ implemented using 8 bit Walsh Codes (7 unique orthogonal codes).
+ The ADC and the wireless ports add area overheads to the NoC switches with
+ wireless capability.
+ They report the total area overhead per wireless switch to be 1.79mm
+\begin_inset Formula $^{2}$
+\end_inset
+
+ resulting in a total overhead of 12.53 mm
+\begin_inset Formula $^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+FDMA
+\end_layout
+
+\begin_layout Standard
+Using the FDMA channel access scheme multiple nodes can access a communication
+ channel simultaneously
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ftc"
+
+\end_inset
+
+.
+ In FDMA the whole frequency band is divided into the sub bands, and every
+ sub band serves a single user, so every node has its own transmission frequency
+ band and a receiver band.
+ Guard bands are inserted between these frequency bands to prevent signal
+ from one band to 'bleed' into another.
+\end_layout
+
+\begin_layout Standard
+When operating sub-THz region, the net bandwidth is sufficient to be split
+ into multiple bands.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lee:2009:SMW:1614320.1614345"
+
+\end_inset
+
+ partitions the entire bandwidth into 16 distinct channels that can be used
+ simultaneously.
+\end_layout
+
+\begin_layout Subsubsection
+Priority based
+\end_layout
+
+\begin_layout Paragraph
+Prioritized Fast Forwarding
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+PP
+\end_layout
+
+\end_inset
+
+The concept has been discussed in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "5118015"
+
+\end_inset
+
+.Fast-forwarding attempts to forward a packet once it is received .
+ In this way, we can prevent source node from injecting new packets before
+ the previous packet of the same flow traverses out of its contention domain.
+ Thus we propose a prioritized forwarding scheme, receiver priority , which
+ can be easily incorporated into the SD-MAC protocol by assigning prioritized
+ contention numbers for binary countdown.
+ The basic idea is to assign higher priority to the downstream node of the
+ same flow.
+ We reserve the MSB as the receiver priority bit, ‘1’ indicating tha t the
+ current node just receives a packet; ‘0’
+\end_layout
+
+\begin_layout Subsection
+Routing protocols
+\end_layout
+
+\begin_layout Subsubsection
+XY Routing
+\end_layout
+
+\begin_layout Standard
+XY routing is one of the most primitive and standard routing algorithms
+ that is both shortest path (for wired mesh networks) and deadlock free.
+ Its amazingly simple implementation means it consumes minimal hardware
+ and computatational power.
+ Due to this very property, it is often the protocol of choice in real life
+ NoCs.
+ However, it suffers from acute load-imbalance and latency issues becuase
+ it doesn't take congestion into account.
+ In wireless routing, XY is no longer the shortest path because of the non
+ uni-dimensional (diagonal) paths available (as shown in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:routing"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Location Based Routing (LBR)
+\end_layout
+
+\begin_layout Standard
+As the name says, LBR uses the source and destination nodes to decide the
+ next node in route.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "5948560"
+
+\end_inset
+
+ has developed LBR as an extension of GAR (Geographically Aided Routing)
+ introducing lower latency and deadlock avoidance.
+ It uses LBR in a multichannel environment using UWB-I.
+ Basically it uses the idea that the range of a wireless transceiver can
+ go beyond the one hop that wired links can connect.
+ After the wireless nodes are placed on the chip and their trasmission range
+ is determined, we get a McWiNoC with static yet configurable topology.
+ GAR essentially uses the relative coordinates of nodes to decide the route,
+ as does LBR.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/routing.png
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:routing"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Region Aided
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4252899"
+
+\end_inset
+
+ uses a cross layer design (similar to the OSI) for data transmission.
+ The responsibilities of addressing and routing are vested in the network
+ layer.
+ It employs a hierarchical address scheme where 
+\begin_inset Quotes eld
+\end_inset
+
+logical address
+\begin_inset Quotes eld
+\end_inset
+
+ is calculated as 
+\begin_inset Formula $<CoreID,internalID>$
+\end_inset
+
+ where 
+\begin_inset Formula $CoreID$
+\end_inset
+
+ is ID of the IP whereas the internalID is address of the memory location
+ or register inside core.
+ In the adaptive region aided routing that the design uses, each RF node
+ divides the chip plane from it’s own perspective.
+ Each region has region header and four border coordinates define a region.
+ It uses region delimitation for routing which in turn can be split into
+ 3 steps 
+\end_layout
+
+\begin_layout Itemize
+Region pre-identification - Best routing path is calculated based on metrics
+ hop count, expected transmission time and path interference.
+\end_layout
+
+\begin_layout Itemize
+Mutual overlapping elimination - If the nodes in the overlapping area belong
+ to only one of the overlapped regions, simple overlapping occurs.
+ Otherwise, if the nodes in the overlapping area belong to different overlapped
+ regions, mutual overlapping occurs.
+ Eliminating these overlapping regions makes sure the regions under consideratio
+n are mutually exclusive.
+\end_layout
+
+\begin_layout Itemize
+Border Extension - The region border can be extended to reduce the hardware
+ cost without hurting the routing decision.
+\end_layout
+
+\begin_layout Subsubsection
+Adaptive routing
+\end_layout
+
+\begin_layout Standard
+Adaptive routing has been shown to outdo the static ones in most general
+ purpose scenarios where the traffic is not well characterized and predictable.
+\end_layout
+
+\begin_layout Standard
+The adaptive region aided routing by
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4252899"
+
+\end_inset
+
+ has already beenLocation Based Routing (LBR) discussed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "10.1109/PDP.2011.37"
+
+\end_inset
+
+ proposes an adaptive wormhole packet switching based routing.
+ Packets are composed of 64-bit flits and each individual packet may be
+ transmitted using wireless or wired or both.
+ This decision is taken on the basis of location of source and destination
+ nodes.
+ The routing algorithm uses the wired links for nodes lying in the same
+ subnet.
+ The algorithm also takes into account the buffer status.
+ Combining all these metrics, routing algo is adaptive with a parameter
+ 
+\begin_inset Formula $∂$
+\end_inset
+
+ that can be altered as per traffic pattern and congestion that are calculated
+ dynamically using these metrics.
+\end_layout
+
+\begin_layout Subsubsection
+Deadlock avoidance
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "10.1109/PDP.2011.37"
+
+\end_inset
+
+ avoids a deadlock by using virtual circuits (VCs).
+ There are two possibilities when using VCs
+\end_layout
+
+\begin_layout Enumerate
+Single channel - only way is that routing algo takes care that deadlock
+ is avoided.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Channels > 2 - reserve 2 channels , for deadlock avoidance and allocate
+ the rest as shared channels to improve performance.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "5948560"
+
+\end_inset
+
+ on the other hand , a uses turn restricted LBR to prevent deadlocks.
+\end_layout
+
+\begin_layout Section
+Traffic scenarios
+\end_layout
+
+\begin_layout Subsection
+Burstiness
+\end_layout
+
+\begin_layout Standard
+Burstiness is a measure of the granularity of the traffic.
+ Bursty traffic tends to pour in all at once, whereas the uniform traffic
+ is it's well behaved counterpart.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+pp 2 lines
+\end_layout
+
+\end_inset
+
+Communication data traversing an interconnection network exhibits temporal
+ variance.
+ In other words, the level of burstiness or packets per unit time is not
+ constant and varies from one cycle to the next.Uniformity in traffic makes
+ predictions possible and optimizations effective.
+ Thus ability to deal with bursty traffic is a desired trait in networks.
+\end_layout
+
+\begin_layout Standard
+Consider two pieces of code.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+F1():
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+loop(1M times):
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+compute()
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+loop(1M times):
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+message()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+F2():
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+loop(1M times):
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+compute()
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+message()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The traffic generated by F1() is much more bursty as it initially buffers
+ all the computed data and then messages all at once.
+ If the data is being sent through a heavily contended route, it is very
+ likely to stall.
+ In contrast, F2() interleaves it's computation with the message passing.
+\end_layout
+
+\begin_layout Standard
+The factor of 'burstiness' tries to model the frequency and size of these
+ bursts.
+ Effectively, it tries to reflect the on-chip traffic self-similarity where
+ traffic burst patterns repeat themselves over time.
+ Burstiness modeling uses the Hurst parameter, 
+\begin_inset Formula $0.5<H\leq1$
+\end_inset
+
+, which defines the level of self-similarity.
+ The closer H is to 1 the higher the level of burstiness.
+\end_layout
+
+\begin_layout Standard
+Brewer, in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "brewer,brewer"
+
+\end_inset
+
+introduced the concept of 
+\begin_inset Quotes eld
+\end_inset
+
+bandwidth matching
+\begin_inset Quotes erd
+\end_inset
+
+.
+ To avoid overrunning a slow receiver, the sender deliberately limits its
+ injection rate.
+ This is an example of an application's effort of trying to smooth the burstines
+s to achieve better throughput.
+ As shown in the paper, the results can be quite dramatic, and the network's
+ bandwidth saturates at a much higher level of traffic when bandwidth matching
+ is employed.
+\end_layout
+
+\begin_layout Subsection
+Distribution
+\end_layout
+
+\begin_layout Standard
+Traffic distribution tells about the probability that a specific node may
+ send a data packet to some other node.
+ This (for a simplistic scenario of temporally invariant probability) can
+ be summarized using a traffic matrix.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\nabla=$
+\end_inset
+
+
+\begin_inset Formula $\begin{pmatrix}\nabla_{0,0} & \nabla_{0,1} & \cdots & \cdots & \nabla_{0,n-1}\\
+\nabla_{1,0} & \nabla_{1,1} & \cdots & \cdots & \nabla_{1,n-1}\\
+\vdots &  &  &  & \vdots\\
+\vdots &  &  &  & \vdots\\
+\nabla_{n-1,0} & \cdots & \cdots & \cdots & \nabla_{n-1,n-1}
+\end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\nabla_{i,j}$
+\end_inset
+
+is the probability of node 
+\begin_inset Formula $i$
+\end_inset
+
+ sending a packet to node 
+\begin_inset Formula $j$
+\end_inset
+
+ in each cycle.
+ For an NoC 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\nabla_{i,i}=0\:\forall\: i\in\{nodes\}$
+\end_inset
+
+ i.e.
+ the node doesn't send packets to itself.
+ It is apparent that the probability of packets originating from 
+\begin_inset Formula $node_{i}$
+\end_inset
+
+ is the sum of elements in 
+\begin_inset Formula $row_{i}$
+\end_inset
+
+.
+ This value 
+\begin_inset Formula $\alpha_{i}\leq1$
+\end_inset
+
+ and is called the 
+\family default
+\series bold
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+packet injection rate
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ for 
+\begin_inset Formula $node_{i}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+is a measure of the traffic generated by 
+\begin_inset Formula $node_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Random
+\end_layout
+
+\begin_layout Standard
+In random distribution of traffic, every node has a uniform probabibility
+ of sending packets to any other node.
+ 
+\end_layout
+
+\begin_layout Standard
+So , 
+\begin_inset Formula $\nabla_{i,j}=1/n-1\:\forall\: i\neq j$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is probably the most famous distribution and is used in some way or
+ other in every model.
+ The issue with it is that the uniformity tends to distribute the load pretty
+ evenly.
+ Thus, even routing algorithms or topologies with poor load balancing acumen
+ perform well in this distribution providing misleading benchmark numbers.
+ To avoid this, another paradigm of synthetic traffic is used called permutation
+ traffic.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Permutation traffic
+\series default
+ is often used to stress a topology/routing algorithm.
+ Its primary idea is to generate flows between pairs of nodes.
+ So, for a node 
+\begin_inset Formula $s$
+\end_inset
+
+, its destination 
+\begin_inset Formula $d$
+\end_inset
+
+ can be calculated using some given function 
+\begin_inset Formula $\pi$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $d=\pi(s)$
+\end_inset
+
+.
+ These are considered a better parameter to benchmark a topology/routing
+ algorithm because they focus on node-node pair traffic which yields more
+ realistic distributions than random traffic.
+\end_layout
+
+\begin_layout Subsubsection
+Bit complement
+\end_layout
+
+\begin_layout Standard
+Bit complement is a permutation traffic distribution, with 
+\begin_inset Formula $\pi$
+\end_inset
+
+ acting on each bit of a binary source address.
+\end_layout
+
+\begin_layout Standard
+Say the address of source node in binary format is 
+\begin_inset Formula $[s_{0},s_{1},...,s_{i-1}]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then the destination d = 
+\begin_inset Formula $[\neg s_{0},\neg s_{1},...,\neg s_{i-1}]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In the matrix 
+\begin_inset Formula $\nabla$
+\end_inset
+
+, this is marked as 
+\begin_inset Formula $\nabla_{s,d}=PIR_{s}$
+\end_inset
+
+.
+ (PIR is the packet injection rate of 
+\begin_inset Formula $s$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Subsubsection
+Bit reverse
+\end_layout
+
+\begin_layout Standard
+Bit reverse , just like Bit complement is a permutation traffic distribution,
+ with 
+\begin_inset Formula $\pi$
+\end_inset
+
+ acting on each bit of a binary source address.
+\end_layout
+
+\begin_layout Standard
+Say the address of source node in binary format is 
+\begin_inset Formula $[s_{0},s_{1},...,s_{i-1}]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then the destination d = 
+\begin_inset Formula $[s_{i-1},s_{i-2},...,s_{0}]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In the matrix 
+\begin_inset Formula $\nabla$
+\end_inset
+
+, this is marked as 
+\begin_inset Formula $\nabla_{s,d}=PIR_{s}$
+\end_inset
+
+.
+ (PIR is the packet injection rate of 
+\begin_inset Formula $s$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Subsubsection
+Matrix transpose
+\end_layout
+
+\begin_layout Standard
+Another permutation traffic distribution, where a node that has a position
+ 
+\begin_inset Formula $s=(i,j)$
+\end_inset
+
+ in the NoC grid sends data to 
+\begin_inset Formula $d=(j,i)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+As with the previous cases the matrix 
+\begin_inset Formula $\nabla$
+\end_inset
+
+, this is marked as 
+\begin_inset Formula $\nabla_{s,d}=PIR_{s}$
+\end_inset
+
+.
+ (PIR is the packet injection rate of 
+\begin_inset Formula $s$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Subsection
+Hop distance
+\end_layout
+
+\begin_layout Standard
+Average hop distance is a characteristic of traffic distribution pattern
+ and determines the average manhattan distance between any source-destination
+ pair.
+\end_layout
+
+\end_body
+\end_document

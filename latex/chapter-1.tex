@@ -1,0 +1,102 @@
+
+\lhead[\chaptername~\thechapter]{\rightmark}
+
+
+\rhead[\leftmark]{}
+
+
+\lfoot[\thepage]{}
+
+
+\cfoot{}
+
+
+\rfoot[]{\thepage}
+
+
+\chapter{Why NoCs / Cost Considerations.}
+
+
+\section{Overview}
+
+Before we can start on the best/optimal architecture we have to specify
+on what grounds we would be measuring performance. Further we have
+to ensure that the NOC architecture does improve upon alternative
+architectures on these grounds.
+
+Under most widely accepted norms , we analyze the generic cost in
+terms of area and power. 
+
+NoCs help us overcome the common issues faced by currently used architectures.
+This chapter discusses the problems in brief.
+
+
+\section{Power}
+
+Power has become the most critical constraint in the design of many
+systems, from high-performance servers to em- bedded battery-operated
+devices. Recognizing the need to target increasing power consumption
+and design complexity in these systems, designers have turned to multi-core
+architectures such as chip multiprocessors (CMPs) and multiprocessor
+systems-on-a-chip (MPSoCs).
+
+
+\subsection{Network Power}
+
+Both the processor cores as well as the NoC communication fabric can
+be modeled as a fully connected directed graph \textit{\small G =
+(N, L)} where N is the set of nodes and L is the set of links in G.
+This holds true for the ordinary multi-processors as well , and uni-cores
+just behave as a trivial subset. The only difference lies in how the
+fabric behaves. Whereas in unicores this power can be safely neglected
+, this power is included in the shared-bus power consumption for the
+ordinary multicores.
+
+There are many frameworks for the estimation of this power. Some of
+them being LUNA and Orion.
+
+Most commonly used ``proxy-parameters'' for the power consumption
+include link-utilization. Dynamic network power, is a function of
+activity/utilization and energy costs (constants) for each of the
+key router components. Using link utilization as an abstraction for
+network power , the level of activity at a network link is used as
+a measure the overall power consumption of that network router and
+link.\cite{Eisley:2004:HPA:1023833.1023849}
+
+
+\subsection{Processor Power }
+
+Since we can model the processor cores using the same above graph,
+the same frameworks would work fine here as well. But in contrast
+to the network model , the data transfer over nodes is much cheaper
+and faster process. Resource utilization is usually used as a proxy
+for power, similar to the way we abstract network power through link
+utilization in Section 1.2.1, we abstract the power consumption of
+a processor by the utilizations of individual resources. The summation
+of the energy costs of each component (functional units, register
+file, caches etc.) is captured by each respective utilization function. 
+
+In the case of the network fabric, the utilization of all of the components
+is approximately equal because message flowing in networks consume
+roughly the same amount of energy per hop. Estimates of individual
+network components\textquoteright{} energy consumptions are thus not
+necessary because it is a relative power measure; constant factors
+can be eliminated. However, in the case of a processor pipeline, each
+instruction will not consume the same amount of energy. The component
+utilizations hence cannot be removed and abstracted as a single utilization.
+Relative estimates are thus required in order to obtain a relatively
+accurate estimation of processor power.
+
+
+\section{Area}
+
+With the failure of Dennard scaling and thus slowed supply voltage
+, scaling core count scaling may be in jeopardy, which would leave
+the community with no clear scaling path to exploit continued transistor
+count increases. In any case , preserving the transistors for the
+purpose of actual computing is a priority for any designer.For instance,
+by increasing the buffer size at each input channel from 2 to 3 words,
+the router area of a 4x4 NoC increases by 30\% or more\cite{Ogras:2005:KRP:1084834.1084856}.To
+this end we like to keep the buffers (that add absolutely nothing
+to computations) to the minimum.Buffer consumes much of silicon and
+power and this is likely to reduce performance. 
